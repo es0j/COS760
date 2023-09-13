@@ -26,7 +26,9 @@ cities=[]
 with open(FNAME) as f:
     for l in f:
         if l[0]==" " and not "EOF" in l:
+            
             d = l.replace("\n","").split(" ")
+            #print(d)
             x = float(d[2])
             y = float(d[3])
             cities.append((x,y))
