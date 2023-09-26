@@ -1,7 +1,7 @@
 #define TOTAL_JOBS 11880
 #define TOTAL_CITIES 14
 #define JOB_SIZE 5
-int jobs[11880][5]={
+char jobs[11880][5]={
 {0,1,2,3,4,},
 {0,1,2,3,5,},
 {0,1,2,3,6,},

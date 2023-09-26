@@ -1,12 +1,34 @@
-#include "jobs.h"
+
+#ifdef BURMA14
+#include "burma14.h"
+#else
+#include "ulysses22.h"
+#endif
+
+
+#ifdef MPI
 #include <mpi.h>
+#else
+#include <omp.h>
+#endif 
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 
 #define BRUTEFORCE_SIZE  TOTAL_CITIES - JOB_SIZE
 
-int inArray(int val,int *arr,int size){
+double getTime(){
+
+#ifdef MPI
+    return MPI_Wtime();
+#else
+    return omp_get_wtime();
+#endif 
+}
+
+//Some utils functions
+int inArray(char val,char *arr,int size){
     for(int i=0;i<size;i++){
         if(arr[i]==val){
             return 1;
@@ -15,14 +37,14 @@ int inArray(int val,int *arr,int size){
     return 0;
 }
 
-int printArray(int *arr,int size){
+int printArray(char *arr,int size){
     for(int j=0;j<size; j++){
         printf("%d ",arr[j]);
     }
     printf("\n");
 }
 
-float computeLen(int *path,int size){
+float computeLen(char *path,int size){
 
     float total=0;
     for(int i=0;i<size;i++){
@@ -32,14 +54,14 @@ float computeLen(int *path,int size){
 
 }
 
-void copy(int *dst, int*src,int size){
+void copy(char *dst, char*src,int size){
     for(int i=0;i<size;i++){
         dst[i]=src[i];
     }
 }
 
 //https://www.geeksforgeeks.org/c-program-to-print-all-permutations-of-a-given-string/
-void swap(int *x, int *y)
+void swap(char *x, char *y)
 {
     int temp;
     temp = *x;
@@ -49,7 +71,7 @@ void swap(int *x, int *y)
 
 struct bestPath{
     float cost;
-    int path[TOTAL_CITIES];
+    char path[TOTAL_CITIES];
 };
 
 /* Function to print permutations
@@ -59,7 +81,7 @@ struct bestPath{
    2. Starting index of the string
    3. Ending index of the string.
 */
-void permute(int *a, int l, int r,struct bestPath *output)
+void permute(char *a, int l, int r,struct bestPath *output)
 {
     int i;
     if (l == r) {
@@ -87,15 +109,17 @@ void permute(int *a, int l, int r,struct bestPath *output)
     }
 }
 
+//Serial unit of work
+void solve(char path[JOB_SIZE], struct bestPath *result){
 
-void solve(int path[JOB_SIZE], struct bestPath *result){
-
+    double start,end;
     float startCost;
-
-    int pathes[BRUTEFORCE_SIZE];
-    int complete_path[TOTAL_CITIES];
+    char pathes[BRUTEFORCE_SIZE];
+    char complete_path[TOTAL_CITIES];
     float total_cost;
     int c=0;
+
+    start = getTime();
 
     for (int i=0;i<TOTAL_CITIES;i++){
         //if not visited
@@ -108,13 +132,8 @@ void solve(int path[JOB_SIZE], struct bestPath *result){
 
     result->cost=999999999999999;
     startCost = computeLen(path,JOB_SIZE);
-    //printf("start cost: %f\n",startCost);
-    //printf("permuting: \n");
-    //printArray(pathes,BRUTEFORCE_SIZE);
-    permute(pathes,0,BRUTEFORCE_SIZE-1,result);
 
-    //printf("Best path, cost(%f)\n",result.cost);
-    //printArray(result.path,BRUTEFORCE_SIZE);
+    permute(pathes,0,BRUTEFORCE_SIZE-1,result);
 
     result->cost += startCost;
 
@@ -123,10 +142,12 @@ void solve(int path[JOB_SIZE], struct bestPath *result){
 
     copy(result->path,complete_path,TOTAL_CITIES);
 
-    //printf("Total Best path, cost(%f)\n",total_cost);
-    //printArray(complete_path,TOTAL_CITIES);
+    end = getTime();
+    //printf("Serial unity work time:%lf\n",end-start);
+
 }
 
+//solve multiple units of work, used only by MPI
 void solveJob(int rank,int processes,struct bestPath *best){
     struct bestPath new;
 
@@ -147,17 +168,22 @@ void solveJob(int rank,int processes,struct bestPath *best){
     //printf("finished job %i...\n",rank);
     //printf("Total Best path, cost(%f)\n",best->cost);
     //printArray(best->path,TOTAL_CITIES);
-
-
-
 }
 
-int main(int argc, char** argv) {
 
-    struct bestPath best;
+void main(int argc, char** argv) {
+
+    struct bestPath *best;
     double start,end;
+    struct bestPath resultArr[TOTAL_JOBS];
+    int finalSearchIndex;
+
+//mpi parallel block
+#ifdef MPI
     // Initialize the MPI environment
     MPI_Init(&argc, &argv);
+
+    start = getTime();
 
     // Get the number of processes
     int world_size;
@@ -167,48 +193,57 @@ int main(int argc, char** argv) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-    struct bestPath *resultArr;
-
-    //solveJob(0,1,&best);
+    finalSearchIndex = world_size;
 
     MPI_Status Stat;
     if ( rank == 0 ) {
         printf("max rank %d\n",world_size);
-
-
-        resultArr = malloc(sizeof(struct bestPath)*world_size);
-
-        start = MPI_Wtime();
         solveJob(rank,world_size,resultArr);
-
         for(int i=1;i<world_size;i++){
             MPI_Recv(&resultArr[i], sizeof(struct bestPath), MPI_CHAR, MPI_ANY_SOURCE, 0, MPI_COMM_WORLD, &Stat);
-            //printf("recv job %i...\n",i);
         }
 
-        //get the best result again...
+    }
+    else{
+        solveJob(rank,world_size,&resultArr[rank]);
+        MPI_Send(&resultArr[rank], sizeof(struct bestPath), MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+        MPI_Finalize();
+        return;
+    }
 
-        struct bestPath *bestfinal = resultArr;
+#else
+    start = getTime();
+    finalSearchIndex = TOTAL_JOBS;
+    printf("Numero max de threads= %d\n", omp_get_max_threads());
+    #pragma omp parallel for  shared(resultArr)
+    for (int i = 0; i < TOTAL_JOBS; i++)
+    {
+      solve(jobs[i], &resultArr[i]);
+    }
+#endif
 
-        for(int i=0;i<world_size;i++){
-            if(resultArr[i].cost < bestfinal->cost){
-                bestfinal = &resultArr[i];
-            }
+//common serial block
+
+
+    best = &resultArr[0];
+    for(int i=0;i<finalSearchIndex;i++){
+        if(resultArr[i].cost < best->cost){
+            best = &resultArr[i];
         }
-        printf("Best cost: %lf\n",bestfinal->cost);
-        printArray(bestfinal->path,TOTAL_CITIES);
-        end = MPI_Wtime();
-        printf("elapsed time %lf \n",end-start);
-        }
-        else if ( rank > 0 ) {
+    }
+    printf("Best cost: %lf\n",best->cost);
+    printArray(best->path,TOTAL_CITIES);
 
-        solveJob(rank,world_size,&best);
-        MPI_Send(&best, sizeof(struct bestPath), MPI_CHAR, 0, 0, MPI_COMM_WORLD);
-        //printf("sending...\n");
-        }
+    end = getTime();
+
+    printf("elapsed time %lf \n",end-start);
 
 
+#ifdef MPI
     // Finalize the MPI environment.
     MPI_Finalize();
+#endif
+
+
 
 }

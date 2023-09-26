@@ -1,0 +1,625 @@
+joliveira@r2i2n14:~/cos770> mpirun -n 1 ./tspMPI
+max rank 1
+Serial unity work (0) time:382.920333
+Communication time 0.000000
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 382.920358
+joliveira@r2i2n14:~/cos770> mpirun -n 2 ./tspMPI
+max rank 2
+Serial unity work (0) time:191.509311
+Serial unity work (1) time:191.530541
+Communication time 0.021729
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 191.531067
+joliveira@r2i2n14:~/cos770> mpirun -n 4 ./tspMPI
+max rank 4
+Serial unity work (3) time:95.730359
+Serial unity work (2) time:95.739169
+Serial unity work (1) time:95.752425
+Serial unity work (0) time:95.761959
+Communication time 0.000041
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 95.762026
+joliveira@r2i2n14:~/cos770> mpirun -n 8 ./tspMPI
+max rank 8
+Serial unity work (3) time:47.861757
+Serial unity work (2) time:47.862160
+Serial unity work (6) time:47.864628
+Serial unity work (5) time:47.865807
+Serial unity work (7) time:47.865658
+Serial unity work (4) time:47.866564
+Serial unity work (0) time:47.875337
+Serial unity work (1) time:47.881492
+Communication time 0.005754
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 47.881119
+joliveira@r2i2n14:~/cos770> mpirun -n 16 ./tspMPI
+max rank 16
+Serial unity work (8) time:23.917496
+Serial unity work (14) time:23.917503
+Serial unity work (12) time:23.917927
+Serial unity work (13) time:23.918237
+Serial unity work (9) time:23.918119
+Serial unity work (15) time:23.918207
+Serial unity work (10) time:23.918711
+Serial unity work (11) time:23.920158
+Serial unity work (3) time:23.948144
+Serial unity work (2) time:23.948310
+Serial unity work (1) time:23.948474
+Serial unity work (4) time:23.948524
+Serial unity work (6) time:23.948636
+Serial unity work (5) time:23.948799
+Serial unity work (7) time:23.950061
+Serial unity work (0) time:23.954215
+Communication time 0.000053
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 23.954294
+joliveira@r2i2n14:~/cos770> mpirun -n 24 ./tspMPI
+max rank 24
+Serial unity work (17) time:15.955846
+Serial unity work (19) time:15.956353
+Serial unity work (22) time:15.956629
+Serial unity work (16) time:15.957042
+Serial unity work (13) time:15.957091
+Serial unity work (20) time:15.957481
+Serial unity work (14) time:15.957875
+Serial unity work (21) time:15.957822
+Serial unity work (10) time:15.957698
+Serial unity work (15) time:15.958136
+Serial unity work (8) time:15.957878
+Serial unity work (4) time:15.958255
+Serial unity work (18) time:15.958785
+Serial unity work (7) time:15.958812
+Serial unity work (11) time:15.958929
+Serial unity work (6) time:15.959501
+Serial unity work (1) time:15.959574
+Serial unity work (23) time:15.962106
+Serial unity work (9) time:15.961527
+Serial unity work (0) time:15.964097
+Serial unity work (2) time:15.971920
+Serial unity work (3) time:15.977206
+Serial unity work (5) time:15.977601
+Serial unity work (12) time:16.036858
+Communication time 0.072050
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 16.036174
+
+max rank 48
+Serial unity work (33) time:7.958730
+Serial unity work (39) time:7.959268
+Serial unity work (43) time:7.959783
+Serial unity work (32) time:7.959999
+Serial unity work (30) time:7.960737
+Serial unity work (46) time:7.960309
+Serial unity work (28) time:7.960827
+Serial unity work (31) time:7.960809
+Serial unity work (41) time:7.960897
+Serial unity work (45) time:7.961444
+Serial unity work (36) time:7.961527
+Serial unity work (40) time:7.961698
+Serial unity work (47) time:7.962101
+Serial unity work (29) time:7.962675
+Serial unity work (42) time:7.962645
+Serial unity work (35) time:7.963216
+Serial unity work (34) time:7.963112
+Serial unity work (37) time:7.963337
+Serial unity work (38) time:7.963464
+Serial unity work (27) time:7.963667
+Serial unity work (44) time:7.965736
+Serial unity work (25) time:7.968217
+Serial unity work (26) time:7.983524
+Serial unity work (18) time:7.991315
+Serial unity work (21) time:7.992252
+Serial unity work (13) time:7.992621
+Serial unity work (6) time:7.992376
+Serial unity work (12) time:7.992762
+Serial unity work (19) time:7.992830
+Serial unity work (23) time:7.992886
+Serial unity work (17) time:7.992821
+Serial unity work (7) time:7.993006
+Serial unity work (15) time:7.993435
+Serial unity work (10) time:7.993075
+Serial unity work (8) time:7.993307
+Serial unity work (20) time:7.993523
+Serial unity work (9) time:7.994446
+Serial unity work (22) time:7.994770
+Serial unity work (4) time:7.994991
+Serial unity work (16) time:7.995372
+Serial unity work (2) time:7.996359
+Serial unity work (1) time:7.997004
+Serial unity work (0) time:7.996468
+Serial unity work (3) time:7.996841
+Serial unity work (5) time:8.005268
+Serial unity work (11) time:8.008196
+Serial unity work (24) time:8.004356
+Serial unity work (14) time:8.032535
+Communication time 0.035530
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 8.032026
+
+
+
+joliveira@service1:~/cos770> cat mpi-intel-24-1.o382850
+max rank 96
+Serial unity work (79) time:3.962772
+Serial unity work (81) time:3.962930
+Serial unity work (82) time:3.963012
+Serial unity work (74) time:3.963075
+Serial unity work (77) time:3.963642
+Serial unity work (76) time:3.963312
+Serial unity work (75) time:3.963500
+Serial unity work (78) time:3.963722
+Serial unity work (80) time:3.963861
+Serial unity work (88) time:3.963886
+Serial unity work (83) time:3.963966
+Serial unity work (94) time:3.964015
+Serial unity work (91) time:3.964615
+Serial unity work (92) time:3.964344
+Serial unity work (85) time:3.964395
+Serial unity work (90) time:3.964673
+Serial unity work (84) time:3.964408
+Serial unity work (89) time:3.964815
+Serial unity work (86) time:3.964960
+Serial unity work (93) time:3.965004
+Serial unity work (87) time:3.965008
+Serial unity work (95) time:3.965715
+Serial unity work (73) time:3.979986
+Serial unity work (72) time:3.982140
+Serial unity work (7) time:3.995092
+Serial unity work (3) time:3.995742
+Serial unity work (9) time:3.995810
+Serial unity work (15) time:3.996179
+Serial unity work (8) time:3.996386
+Serial unity work (16) time:3.996625
+Serial unity work (2) time:3.996530
+Serial unity work (12) time:3.996730
+Serial unity work (10) time:3.996636
+Serial unity work (20) time:3.996733
+Serial unity work (4) time:3.996699
+Serial unity work (1) time:3.996823
+Serial unity work (22) time:3.996975
+Serial unity work (6) time:3.997180
+Serial unity work (23) time:3.997283
+Serial unity work (5) time:3.997245
+Serial unity work (13) time:3.997369
+Serial unity work (14) time:3.997321
+Serial unity work (11) time:3.997456
+Serial unity work (21) time:3.997707
+Serial unity work (55) time:3.994507
+Serial unity work (51) time:3.994524
+Serial unity work (19) time:3.998421
+Serial unity work (59) time:3.994427
+Serial unity work (18) time:3.998679
+Serial unity work (17) time:3.998941
+Serial unity work (64) time:3.995220
+Serial unity work (63) time:3.995405
+Serial unity work (54) time:3.996199
+Serial unity work (69) time:3.996112
+Serial unity work (37) time:3.996037
+Serial unity work (52) time:3.996533
+Serial unity work (26) time:3.996390
+Serial unity work (43) time:3.996124
+Serial unity work (67) time:3.996201
+Serial unity work (71) time:3.996263
+Serial unity work (33) time:3.996102
+Serial unity work (56) time:3.996264
+Serial unity work (40) time:3.996377
+Serial unity work (65) time:3.996759
+Serial unity work (42) time:3.996437
+Serial unity work (70) time:3.996378
+Serial unity work (41) time:3.996511
+Serial unity work (57) time:3.996433
+Serial unity work (38) time:3.996844
+Serial unity work (68) time:3.996852
+Serial unity work (29) time:3.996691
+Serial unity work (44) time:3.996682
+Serial unity work (61) time:3.996758
+Serial unity work (47) time:3.996644
+Serial unity work (31) time:3.996843
+Serial unity work (46) time:3.996799
+Serial unity work (58) time:3.996674
+Serial unity work (36) time:3.997091
+Serial unity work (50) time:3.997000
+Serial unity work (45) time:3.997146
+Serial unity work (39) time:3.997475
+Serial unity work (34) time:3.997017
+Serial unity work (35) time:3.997230
+Serial unity work (25) time:3.997087
+Serial unity work (32) time:3.997077
+Serial unity work (60) time:3.997618
+Serial unity work (28) time:3.997897
+Serial unity work (66) time:3.998270
+Serial unity work (62) time:3.998657
+Serial unity work (49) time:3.999818
+Serial unity work (53) time:4.001603
+Serial unity work (30) time:4.001338
+Serial unity work (24) time:4.008636
+Serial unity work (27) time:4.017971
+Serial unity work (0) time:4.025841
+Serial unity work (48) time:4.024906
+Communication time 0.002986
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000000
+elapsed time 4.028860
+
+real    0m4.892s
+user    0m0.052s
+sys     0m0.008s
+
+
+
+
+
+max rank 144
+Serial unity work (101) time:2.642523
+Serial unity work (137) time:2.642582
+Serial unity work (128) time:2.642128
+Serial unity work (126) time:2.642553
+Serial unity work (138) time:2.642217
+Serial unity work (99) time:2.642422
+Serial unity work (106) time:2.642930
+Serial unity work (114) time:2.642565
+Serial unity work (104) time:2.642911
+Serial unity work (124) time:2.642804
+Serial unity work (110) time:2.642612
+Serial unity work (127) time:2.642729
+Serial unity work (93) time:2.642898
+Serial unity work (140) time:2.642871
+Serial unity work (87) time:2.642848
+Serial unity work (107) time:2.642801
+Serial unity work (129) time:2.643041
+Serial unity work (83) time:2.642979
+Serial unity work (109) time:2.643191
+Serial unity work (143) time:2.643021
+Serial unity work (91) time:2.642731
+Serial unity work (103) time:2.642701
+Serial unity work (131) time:2.642625
+Serial unity work (78) time:2.642719
+Serial unity work (115) time:2.642849
+Serial unity work (108) time:2.642840
+Serial unity work (139) time:2.642561
+Serial unity work (136) time:2.643049
+Serial unity work (79) time:2.643051
+Serial unity work (105) time:2.642912
+Serial unity work (125) time:2.642758
+Serial unity work (81) time:2.642692
+Serial unity work (118) time:2.642997
+Serial unity work (141) time:2.642809
+Serial unity work (76) time:2.642690
+Serial unity work (113) time:2.642879
+Serial unity work (135) time:2.642943
+Serial unity work (84) time:2.643036
+Serial unity work (111) time:2.642941
+Serial unity work (130) time:2.643253
+Serial unity work (90) time:2.642819
+Serial unity work (119) time:2.643110
+Serial unity work (134) time:2.643106
+Serial unity work (94) time:2.642704
+Serial unity work (98) time:2.643140
+Serial unity work (74) time:2.643167
+Serial unity work (102) time:2.643196
+Serial unity work (89) time:2.643163
+Serial unity work (112) time:2.643299
+Serial unity work (77) time:2.642816
+Serial unity work (100) time:2.643335
+Serial unity work (80) time:2.643007
+Serial unity work (82) time:2.643312
+Serial unity work (75) time:2.643411
+Serial unity work (132) time:2.643394
+Serial unity work (88) time:2.643378
+Serial unity work (95) time:2.643323
+Serial unity work (121) time:2.643476
+Serial unity work (85) time:2.643326
+Serial unity work (123) time:2.643494
+Serial unity work (92) time:2.643532
+Serial unity work (117) time:2.643711
+Serial unity work (133) time:2.643805
+Serial unity work (122) time:2.643898
+Serial unity work (142) time:2.643975
+Serial unity work (73) time:2.645349
+Serial unity work (86) time:2.644928
+Serial unity work (116) time:2.645581
+Serial unity work (96) time:2.655735
+Serial unity work (97) time:2.656058
+Serial unity work (120) time:2.665530
+Serial unity work (72) time:2.666028
+Serial unity work (8) time:2.673852
+Serial unity work (28) time:2.673757
+Serial unity work (11) time:2.673940
+Serial unity work (71) time:2.673994
+Serial unity work (58) time:2.673964
+Serial unity work (69) time:2.674161
+Serial unity work (7) time:2.674567
+Serial unity work (5) time:2.674466
+Serial unity work (59) time:2.673982
+Serial unity work (22) time:2.674995
+Serial unity work (21) time:2.674577
+Serial unity work (23) time:2.675171
+Serial unity work (43) time:2.674870
+Serial unity work (3) time:2.674892
+Serial unity work (19) time:2.675217
+Serial unity work (52) time:2.674687
+Serial unity work (16) time:2.674978
+Serial unity work (70) time:2.674722
+Serial unity work (25) time:2.674929
+Serial unity work (61) time:2.674733
+Serial unity work (2) time:2.675279
+Serial unity work (17) time:2.675074
+Serial unity work (35) time:2.674646
+Serial unity work (53) time:2.674788
+Serial unity work (34) time:2.674652
+Serial unity work (47) time:2.674722
+Serial unity work (37) time:2.675014
+Serial unity work (12) time:2.675415
+Serial unity work (38) time:2.675160
+Serial unity work (56) time:2.674460
+Serial unity work (32) time:2.675031
+Serial unity work (26) time:2.674742
+Serial unity work (14) time:2.675156
+Serial unity work (64) time:2.674957
+Serial unity work (40) time:2.675293
+Serial unity work (67) time:2.674661
+Serial unity work (13) time:2.675209
+Serial unity work (29) time:2.674903
+Serial unity work (20) time:2.675401
+Serial unity work (33) time:2.674863
+Serial unity work (44) time:2.675077
+Serial unity work (31) time:2.675055
+Serial unity work (42) time:2.675190
+Serial unity work (54) time:2.674831
+Serial unity work (10) time:2.675493
+Serial unity work (60) time:2.674945
+Serial unity work (66) time:2.675277
+Serial unity work (18) time:2.675603
+Serial unity work (30) time:2.675216
+Serial unity work (62) time:2.674963
+Serial unity work (1) time:2.675178
+Serial unity work (45) time:2.675167
+Serial unity work (57) time:2.675017
+Serial unity work (39) time:2.675225
+Serial unity work (55) time:2.675415
+Serial unity work (46) time:2.675405
+Serial unity work (63) time:2.675120
+Serial unity work (36) time:2.675375
+Serial unity work (41) time:2.675282
+Serial unity work (65) time:2.675280
+Serial unity work (68) time:2.675370
+Serial unity work (51) time:2.675240
+Serial unity work (9) time:2.675979
+Serial unity work (15) time:2.676384
+Serial unity work (50) time:2.675609
+Serial unity work (27) time:2.675854
+Serial unity work (0) time:2.678258
+Serial unity work (4) time:2.679154
+Serial unity work (49) time:2.683104
+Serial unity work (48) time:2.692430
+Serial unity work (6) time:2.693769
+Serial unity work (24) time:2.700374
+Communication time 0.021888
+Best cost: 31.593506
+0 9 8 10 7 1 12 6 11 5 4 3 2 13
+final count time 0.000001
+elapsed time 2.700177
+
+real    0m3.590s
+user    0m0.052s
+sys     0m0.032s
+
+
+max rank 192
+Serial unity work (181) time:1.966813
+Serial unity work (184) time:1.966837
+Serial unity work (171) time:1.967822
+Serial unity work (175) time:1.970148
+Serial unity work (169) time:1.985923
+Serial unity work (190) time:1.990799
+Serial unity work (81) time:1.997496
+Serial unity work (80) time:1.997503
+Serial unity work (99) time:1.997578
+Serial unity work (104) time:1.997553
+Serial unity work (148) time:1.997508
+Serial unity work (6) time:1.997484
+Serial unity work (101) time:1.997692
+Serial unity work (150) time:1.997464
+Serial unity work (98) time:1.997706
+Serial unity work (155) time:1.997963
+Serial unity work (29) time:1.997728
+Serial unity work (147) time:1.997670
+Serial unity work (15) time:1.997494
+Serial unity work (5) time:1.997857
+Serial unity work (11) time:1.997779
+Serial unity work (16) time:1.997548
+Serial unity work (35) time:1.997906
+Serial unity work (116) time:1.998222
+Serial unity work (152) time:1.997840
+Serial unity work (58) time:1.998001
+Serial unity work (103) time:1.997955
+Serial unity work (159) time:1.998191
+Serial unity work (92) time:1.997931
+Serial unity work (52) time:1.997860
+Serial unity work (137) time:1.998292
+Serial unity work (102) time:1.998006
+Serial unity work (27) time:1.997893
+Serial unity work (156) time:1.998290
+Serial unity work (187) time:1.993904
+Serial unity work (8) time:1.997809
+Serial unity work (77) time:1.998420
+Serial unity work (54) time:1.997974
+Serial unity work (136) time:1.998448
+Serial unity work (117) time:1.998309
+Serial unity work (47) time:1.998242
+Serial unity work (162) time:1.997985
+Serial unity work (20) time:1.997885
+Serial unity work (78) time:1.998222
+Serial unity work (55) time:1.998283
+Serial unity work (125) time:1.998137
+Serial unity work (100) time:1.998051
+Serial unity work (32) time:1.997852
+Serial unity work (151) time:1.997966
+Serial unity work (18) time:1.998288
+Serial unity work (83) time:1.998563
+Serial unity work (69) time:1.998351
+Serial unity work (140) time:1.998091
+Serial unity work (108) time:1.998407
+Serial unity work (26) time:1.998091
+Serial unity work (153) time:1.997980
+Serial unity work (1) time:1.998206
+Serial unity work (75) time:1.998660
+Serial unity work (67) time:1.998379
+Serial unity work (132) time:1.998192
+Serial unity work (107) time:1.998430
+Serial unity work (43) time:1.998496
+Serial unity work (154) time:1.997989
+Serial unity work (17) time:1.998428
+Serial unity work (93) time:1.998261
+Serial unity work (62) time:1.998442
+Serial unity work (131) time:1.998381
+Serial unity work (109) time:1.998567
+Serial unity work (44) time:1.998469
+Serial unity work (157) time:1.998143
+Serial unity work (7) time:1.998406
+Serial unity work (82) time:1.998329
+Serial unity work (68) time:1.998514
+Serial unity work (122) time:1.998550
+Serial unity work (97) time:1.998210
+Serial unity work (31) time:1.998154
+Serial unity work (165) time:1.998240
+Serial unity work (13) time:1.998422
+Serial unity work (76) time:1.998421
+Serial unity work (51) time:1.998401
+Serial unity work (128) time:1.998171
+Serial unity work (115) time:1.998209
+Serial unity work (38) time:1.998231
+Serial unity work (163) time:1.998310
+Serial unity work (12) time:1.998157
+Serial unity work (85) time:1.998400
+Serial unity work (60) time:1.998174
+Serial unity work (126) time:1.998469
+Serial unity work (114) time:1.998424
+Serial unity work (28) time:1.998266
+Serial unity work (160) time:1.998652
+Serial unity work (21) time:1.998504
+Serial unity work (86) time:1.998283
+Serial unity work (70) time:1.998202
+Serial unity work (139) time:1.998477
+Serial unity work (105) time:1.998247
+Serial unity work (34) time:1.998196
+Serial unity work (161) time:1.998449
+Serial unity work (9) time:1.998110
+Serial unity work (89) time:1.998495
+Serial unity work (57) time:1.998509
+Serial unity work (129) time:1.998399
+Serial unity work (106) time:1.998708
+Serial unity work (30) time:1.998246
+Serial unity work (158) time:1.998576
+Serial unity work (2) time:1.998181
+Serial unity work (79) time:1.998468
+Serial unity work (65) time:1.998354
+Serial unity work (141) time:1.998560
+Serial unity work (110) time:1.998571
+Serial unity work (45) time:1.998357
+Serial unity work (167) time:1.998660
+Serial unity work (14) time:1.998421
+Serial unity work (84) time:1.998356
+Serial unity work (66) time:1.998428
+Serial unity work (135) time:1.998551
+Serial unity work (118) time:1.998439
+Serial unity work (36) time:1.998410
+Serial unity work (149) time:1.998790
+Serial unity work (23) time:1.998498
+Serial unity work (94) time:1.998476
+Serial unity work (63) time:1.998438
+Serial unity work (127) time:1.998671
+Serial unity work (111) time:1.999010
+Serial unity work (37) time:1.998414
+Serial unity work (166) time:1.998852
+Serial unity work (19) time:1.998482
+Serial unity work (88) time:1.998490
+Serial unity work (61) time:1.998479
+Serial unity work (143) time:1.998605
+Serial unity work (119) time:2.000326
+Serial unity work (46) time:1.998655
+Serial unity work (164) time:1.999023
+Serial unity work (22) time:1.998714
+Serial unity work (90) time:1.998538
+Serial unity work (64) time:1.998455
+Serial unity work (130) time:1.998667
+Serial unity work (25) time:1.998355
+Serial unity work (10) time:1.998619
+Serial unity work (74) time:1.998817
+Serial unity work (59) time:1.998530
+Serial unity work (138) time:1.998636
+Serial unity work (42) time:1.998568
+Serial unity work (87) time:1.999072
+Serial unity work (71) time:1.998605
+Serial unity work (134) time:1.998636
+Serial unity work (33) time:1.998489
+Serial unity work (91) time:1.999063
+Serial unity work (50) time:1.998719
+Serial unity work (124) time:1.998696
+Serial unity work (39) time:1.998397
+Serial unity work (56) time:1.998756
+Serial unity work (123) time:1.998884
+Serial unity work (40) time:1.998528
+Serial unity work (133) time:1.998828
+Serial unity work (41) time:1.998468
+Serial unity work (142) time:1.999115
+Serial unity work (145) time:2.000508
+Serial unity work (170) time:1.995477
+Serial unity work (53) time:2.000972
+Serial unity work (113) time:2.001106
+Serial unity work (112) time:2.001303
+Serial unity work (95) time:2.001599
+Serial unity work (121) time:2.000800
+Serial unity work (0) time:2.001833
+Serial unity work (173) time:1.998410
+Serial unity work (146) time:2.003521
+Serial unity work (3) time:2.003618
+Serial unity work (49) time:2.003992
+Serial unity work (73) time:2.005638
+Serial unity work (172) time:2.003149
+Serial unity work (144) time:2.010149
+Serial unity work (4) time:2.011979
+Serial unity work (72) time:2.012173
+Serial unity work (48) time:2.013463
+Serial unity work (177) time:2.011273
+Serial unity work (176) time:2.011912
+Serial unity work (24) time:2.017620
+Serial unity work (96) time:2.018609
+Serial unity work (120) time:2.018224
+Serial unity work (178) time:2.017217
+Serial unity work (185) time:2.020956
+Serial unity work (179) time:2.029824
+Serial unity work (174) time:2.033561
+Serial unity work (191) time:2.036848
+Serial unity work (182) time:2.063723
+Serial unity work (189) time:2.074611
+Serial unity work (186) time:2.115218
+Serial unity work (180) time:2.289249
+Serial unity work (188) time:2.370007
+Serial unity work (168) time:2.396941
+Serial unity work (183) time:2.405566
+Communication time 0.412425
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000001
+elapsed time 2.414286
+
+real    0m3.421s
+user    0m0.080s
+sys     0m0.032s

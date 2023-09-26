@@ -1,4 +1,4 @@
-#python3 jobs.py > jobs.h
+#python3 jobs.py > burma14.h
 from itertools import permutations
 """
 cities = [
@@ -50,7 +50,7 @@ def printJobs():
     print(f"#define TOTAL_CITIES {TOTAL_CITIES}")
     print(f"#define JOB_SIZE {INITIAL_PERMUTE+1}")
 
-    print(f"int jobs[{len(jobs)}][{INITIAL_PERMUTE+1}]="+"{")
+    print(f"char jobs[{len(jobs)}][{INITIAL_PERMUTE+1}]="+"{")
     for j in jobs:
         print("{0,",end="")
         for i in range(len(j)):

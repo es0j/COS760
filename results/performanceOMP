@@ -1,0 +1,64 @@
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=1 ./tspOMP
+Numero max de threads= 1
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000042
+elapsed time 383.248726
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=2 ./tspOMP
+Numero max de threads= 2
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000040
+elapsed time 191.598007
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=4 ./tspOMP
+Numero max de threads= 4
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000041
+elapsed time 95.778795
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=8 ./tspOMP
+Numero max de threads= 8
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000042
+elapsed time 47.976914
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=16 ./tspOMP
+Numero max de threads= 16
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000041
+elapsed time 24.072692
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=24 ./tspOMP
+Numero max de threads= 24
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000042
+elapsed time 16.168115
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=48 ./tspOMP
+Numero max de threads= 48
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000045
+elapsed time 14.156420
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=96 ./tspOMP
+Numero max de threads= 96
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000043
+elapsed time 14.484246
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=192 ./tspOMP # hyperthread
+Numero max de threads= 192
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000046
+elapsed time 14.249189
+joliveira@r2i2n14:~/cos770> OMP_NUM_THREADS=192 ./tspOMP # hyperthread
+Numero max de threads= 192
+Best cost: 31.593506
+0 7 10 8 9 1 12 6 11 5 4 3 2 13
+final count time 0.000043
+elapsed time 14.290660
+
+real    0m14.295s
+user    11m10.772s
+sys     0m0.076s
