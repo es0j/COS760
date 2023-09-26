@@ -29,7 +29,17 @@ To perform the operation in parallel, the strategy used was to generate multiple
 Due to the complexity of writing the software responsible for performing the N,k permutation for the initial paths, this step is done through a Python script, which generates the header file included by the program. This script is also responsible for reading the input file and calculating the 14x14 matrix of distances between cities. This pre-calculation of distances avoids calling the function ```calculate_distance(i,j) => ((coords[i].x - coords[j].x) ^2+(coords[i].y - coords[j]. y) ^2 )^0.5``` , which performs 4 memory accesses in addition to calculating a square root. This way, when pre-computing the distance matrix, the function can be replaced by a single memory access:
 ```calculate_distance(i,j) => distance[i][j]```;
 Permutations are performed for the first 5 cities (the first city is always 0), totaling 11880 possible initial paths.
-In the OpenMP application, a parallel for loop is performed to obtain the best path for each of the 11k initial paths and then a sequential for loop is performed to obtain the best of the 11 thousand paths
+In the OpenMP application, a parallel for loop is performed to obtain the best path for each of the 11k initial paths and then a sequential for loop is performed to obtain the best of the 11 thousand paths.
+
+The preprocessing time was not included on the serial time measure, since it represents less than 1% of the total time, even for a high number of processors used:
+```
+$ time python3 jobs.py > jobs.h
+
+real    0m0.045s
+user    0m0.036s
+sys     0m0.009s
+```
+
 ```c
 struct bestPath resultArr[TOTAL_JOBS];
 #pragma omp parallel for  shared(resultArr)
@@ -317,6 +327,6 @@ sys     0m0.012s
 ```
 
 ### Conclusion
-The chosen algorithm had performance similar to expected (linear) when developed using MPI. The presence of communication implicated in OpenMP prevented the use of more intelligent task distribution strategies, such as using the node number to select loads, causing a limit in speedup, due to the introduction of additional serial processing due to communication.
+The chosen algorithm had a performance similar to expected (linear) when developed using MPI. The presence of communication implicated in OpenMP prevented the use of more intelligent task distribution strategies, such as using the node number to select loads, causing a limit in speedup, due to the introduction of additional serial processing due to communication.
 
 
